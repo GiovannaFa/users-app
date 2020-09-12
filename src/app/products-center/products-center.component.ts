@@ -10,8 +10,9 @@ import { User } from '../user';
   providers: [ShowProductsService]
 })
 export class ProductsCenterComponent implements OnInit {
+  isComponentVisible:boolean = true;
   super_id: string;
-  supermarkets: any =[];
+  supermarkets: any;
 
   selectedSupermarket: any =[];
 
@@ -20,7 +21,9 @@ export class ProductsCenterComponent implements OnInit {
   //subcription to the show-product service
   ngOnInit(): void {
     this._showProductsService.getSupermarkets()
-      .subscribe(resSupermarkets => this.supermarkets = resSupermarkets);
+      .subscribe(resSupermarkets => {
+        return this.supermarkets = resSupermarkets;
+      });
   }
 
   onSelectSupermarket(supermarket: User){

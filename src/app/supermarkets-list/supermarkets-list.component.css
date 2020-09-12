@@ -1,0 +1,16 @@
+.map-wrapper{
+  position: relative;
+  display:block;
+  top:4px;
+  left:-100px;
+  width: 950px;
+  height: 580px;
+  overflow:scroll;
+}
+.map-border{
+}
+
+#map {
+  width: 950px;
+  height: 580px;
+}

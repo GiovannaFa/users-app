@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../product';
 import { User } from '../user';
 
@@ -9,6 +9,7 @@ import { User } from '../user';
   inputs: ['result']
 })
 export class ProductsDetailComponent implements OnInit {
+  @Input() isComponentVisible: boolean;
 
   result: any[];
 
@@ -16,5 +17,9 @@ export class ProductsDetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  refresh(): void {
+    window.location.reload();
+}
 
 }
