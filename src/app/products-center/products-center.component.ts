@@ -10,7 +10,6 @@ import { User } from '../user';
   providers: [ShowProductsService]
 })
 export class ProductsCenterComponent implements OnInit {
-  isComponentVisible:boolean = true;
   super_id: string;
   supermarkets: any;
 

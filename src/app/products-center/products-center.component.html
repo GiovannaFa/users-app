@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-sm-9">
-    <supermarkets-list (SelectSupermarket) = "onSelectSupermarket($event)"[supermarkets] = "supermarkets" [isComponentVisible] = "isComponentVisible"></supermarkets-list>
+    <supermarkets-list (SelectSupermarket) = "onSelectSupermarket($event)"[supermarkets] = "supermarkets"></supermarkets-list>
   </div>
 
   <div class="col-sm-3">
-    <products-detail *ngIf="selectedSupermarket" [result] = "selectedSupermarket" [isComponentVisible] = "isComponentVisible"></products-detail>
+    <products-detail *ngIf="selectedSupermarket" [result] = "selectedSupermarket"></products-detail>
   </div>
 </div>

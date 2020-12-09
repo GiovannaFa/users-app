@@ -28,6 +28,7 @@ import { Component, OnInit, EventEmitter, Input } from '@angular/core';
 import { Product } from '../product';
 import { User } from '../user';
 import * as L from 'leaflet';
+import { ShowProductsService } from '../show-products.service';
 @Component({
   selector: 'supermarkets-list',
   templateUrl: './supermarkets-list.component.html',
@@ -36,7 +37,7 @@ import * as L from 'leaflet';
   outputs: ['SelectSupermarket']
 })
 export class SupermarketsListComponent implements OnInit {
-  @Input() isComponentVisible: boolean;
+  visible:boolean;
   @Input() supermarkets: Array<User>;
   //supermarkets: Array<User>;
   map;
@@ -63,6 +64,17 @@ export class SupermarketsListComponent implements OnInit {
       "__v" : 0,
       "lat" : 40.419041,
       "lng" : -3.83416
+    },
+    {
+      "_id" : Object("5f6609ce05042056bc9992ab"),
+      "name" : "Dia",
+      "email" : "dia@mail.com",
+      "adress" : "Calle Palencia 21, Madrid",
+      "password" : "$2a$10$x9eP7cHojd4IT7yj2k/3ue4Zneqhwj7PaGG.GWaav2tjkL2Ge2.s2",
+      "date" : Date(),
+      "__v" : 0,
+      "lat" : 40.417430,
+      "lng" : -3.836660
     }
   ]
 
@@ -78,11 +90,12 @@ export class SupermarketsListComponent implements OnInit {
 
   public SelectSupermarket = new EventEmitter();
 
-  constructor() {
+  constructor(private _showProductsService: ShowProductsService) {
   }
 
   ngOnInit(): void {
     this.createMap();
+    this._showProductsService.currentlyVisible.subscribe(visible => this.visible = visible)
   }
 
   createMap() {
@@ -101,7 +114,13 @@ export class SupermarketsListComponent implements OnInit {
     mainLayer.addTo(this.map);
     this.addMarker(this.test_superms);
   }
+
+  newVisibility(){
+    this._showProductsService.changeVisibility(true)
+  }
+
   onSelect(superm: any){
+    this.newVisibility();
     this.SelectSupermarket.emit(superm);
   }
 

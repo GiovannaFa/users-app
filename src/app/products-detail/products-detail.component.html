@@ -1,6 +1,6 @@
 <div class="big-div" *ngFor="let list of result">
-  <div id="main" *ngIf="this.isComponentVisible">
-    <button type="button" class="close" aria-label="Close" (click)="this.isComponentVisible = false">
+  <div id="main" *ngIf="this.visible">
+    <button type="button" class="close" aria-label="Close" (click)="this.newVisibility()">
       <span aria-hidden="true">×</span>
     </button>
     <div class="card mt-4" *ngIf="list.availableProducts.length === 0">

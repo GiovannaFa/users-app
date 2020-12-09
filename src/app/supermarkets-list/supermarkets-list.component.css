@@ -1,16 +1,13 @@
-.map-wrapper{
+#map {
   position: relative;
   display:block;
   top:4px;
   left:-100px;
-  width: 950px;
-  height: 580px;
+  height: 100%;
   overflow:scroll;
 }
-.map-border{
-}
 
-#map {
+#fill {
   width: 950px;
   height: 580px;
 }

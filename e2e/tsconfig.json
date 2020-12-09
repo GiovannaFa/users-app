@@ -7,7 +7,9 @@
     "types": [
       "jasmine",
       "jasminewd2",
-      "node"
-    ]
+      "node",
+      "jquery"
+    ],
+    "allowSyntheticDefaultImports": true
   }
 }
