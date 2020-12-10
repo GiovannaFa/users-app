@@ -5,5 +5,8 @@ export class User {
   name: string;
   email: string;
   password: string;
-  date: Date
+  date: Date;
+  adress: string;
+  lat: number;
+  lng: number
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../product';
+import { ShowProductsService } from '../show-products.service';
 import { User } from '../user';
 
 @Component({
@@ -9,12 +10,22 @@ import { User } from '../user';
   inputs: ['result']
 })
 export class ProductsDetailComponent implements OnInit {
+  visible:boolean;
 
   result: any[];
 
-  constructor() { }
+  constructor(private _showProductsService: ShowProductsService) { }
 
   ngOnInit(): void {
+    this._showProductsService.currentlyVisible.subscribe(visible => this.visible = visible)
   }
+
+  newVisibility(){
+    this._showProductsService.changeVisibility(false)
+  }
+
+  refresh(): void {
+    window.location.reload();
+}
 
 }

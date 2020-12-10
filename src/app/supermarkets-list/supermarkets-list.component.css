@@ -1,0 +1,13 @@
+#map {
+  position: relative;
+  display:block;
+  top:4px;
+  left:-100px;
+  height: 100%;
+  overflow:scroll;
+}
+
+#fill {
+  width: 950px;
+  height: 580px;
+}

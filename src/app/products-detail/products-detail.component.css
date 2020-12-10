@@ -1,0 +1,7 @@
+#main{
+  position: absolute;
+  left:30px;
+  top:15px;
+  height: 560px;
+  overflow: scroll;
+}

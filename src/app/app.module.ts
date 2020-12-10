@@ -10,6 +10,7 @@ import { ProductsCenterComponent } from './products-center/products-center.compo
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
 import { SupermarketsListComponent } from './supermarkets-list/supermarkets-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

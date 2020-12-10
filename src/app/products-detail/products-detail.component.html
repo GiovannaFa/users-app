@@ -1,19 +1,24 @@
-<div *ngFor="let list of result">
-  <div class="card mt-4" *ngIf="list.availableProducts.length === 0">
-    <div class="card-body">
-      <p>Todavía no hay productos :(</p>
+<div class="big-div" *ngFor="let list of result">
+  <div id="main" *ngIf="this.visible">
+    <button type="button" class="close" aria-label="Close" (click)="this.newVisibility()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="card mt-4" *ngIf="list.availableProducts.length === 0">
+      <div class="card-body">
+        <p>Todavía no hay productos :(</p>
+      </div>
     </div>
-  </div>
-  <div class="card mt-1" style="width: 18rem;" *ngFor="let product of list.availableProducts">
-    <div class="card-body">
-      <h5 class="card-title">
-        {{product.title}}
-      </h5>
-      <p>{{product.description}}</p>
-      <p>{{product.quantity}} unidades</p>
-      <p>precio original: {{product.price}} €</p>
-      <p>precio actual:{{product.actual_price}} €</p>
-      <p>caduca el {{product.expire_date | date: 'dd/MM/yyyy'}}</p>
+    <div class="card mt-1" style="width: 15rem;" *ngFor="let product of list.availableProducts">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{product.title}}
+        </h5>
+        <p>{{product.description}}</p>
+        <p>{{product.quantity}} unidades</p>
+        <p>precio original: {{product.price}} €</p>
+        <p>precio actual:{{product.actual_price}} €</p>
+        <p>caduca el {{product.expire_date | date: 'dd/MM/yyyy'}}</p>
+      </div>
     </div>
   </div>
 </div>

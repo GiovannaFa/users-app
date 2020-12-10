@@ -33,7 +33,7 @@ router.get('/supermarkets/:_id', function(req, res){
         console.log("ERROR retieving user\'s products");
       }else {
         res.json(products);
-        console.log(products)
+        //console.log(products)
       }
     })
 });
