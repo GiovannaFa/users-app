@@ -1,3 +1,3 @@
 # UsersApp
 
-run command: npm run dev
+run command: node server
